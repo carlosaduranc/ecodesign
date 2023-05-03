@@ -30,4 +30,111 @@ As a first step, the topic of the functional unit must be discussed. This is a c
 \subsection{Model: Pen and Paper}\label{subsec:model_pen_paper}
 
 
+\begin{figure}[H]
+    \centering
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node(raw_mat1)[unit]{\footnotesize{Raw Material 1}};
+    \node(raw_mat2)[unit, right of=raw_mat1, xshift=0.11\textwidth]{\footnotesize{Raw Material 2}};
+    \node(raw_mat3)[unit, right of=raw_mat2, xshift=0.11\textwidth]{\footnotesize{Raw Material 3}};
+    \node(raw_mat4)[unit, right of=raw_mat3, xshift=0.11\textwidth]{\footnotesize{Raw Material 4}};
+    \node(raw_mat5)[unit, right of=raw_mat4, xshift=0.11\textwidth]{\footnotesize{Raw Material 5}};
+    \node(dots1)[blank, right of=raw_mat5, xshift=0.05\textwidth]{\footnotesize{\dots}};
+    
+    \node(process1)[unit, below of=raw_mat1, yshift=-0.4cm]{\footnotesize{Process 1}};
+    \node(process2)[unit, below of=raw_mat2, yshift=-0.4cm]{\footnotesize{Process 2}};
+    \node(process3)[unit, below of=raw_mat3, yshift=-0.4cm]{\footnotesize{Process 3}};
+    \node(process4)[unit, below of=raw_mat4, yshift=-0.4cm]{\footnotesize{Process 4}};
+    \node(process5)[unit, below of=raw_mat5, yshift=-0.4cm]{\footnotesize{Process 5}};
+    \node(dots2)[blank, below of=dots1, yshift=-0.4cm]{\footnotesize{\dots}};
+
+    \node(blank1)[blank, below of=process1, yshift=-0.4cm]{};
+    \node(blank2)[blank, below of=process2, yshift=-0.4cm]{};
+    \node(blank3)[blank, below of=process3, yshift=-0.4cm]{};
+    \node(blank4)[blank, below of=process4, yshift=-0.4cm]{};
+    \node(blank5)[blank, below of=process5, yshift=-0.4cm]{};
+    \node(blank_dots)[blank, below of=dots2, yshift=-0.4cm]{};
+
+    \node(blank_assembly)[blank, below of=blank1, yshift=-0.4cm]{};
+    \node(assembly_transport)[unit, right of=blank_assembly, xshift=0.05\textwidth]{\small{Assembly}\\ \small{and}\\\small{Transportation}};
+    \node(product)[unit, right of=assembly_transport, xshift=0.2\textwidth]{\small{Product}};
+    \node(waste)[unit, below of=product, yshift=-1cm]{Waste};
+
+    \draw[thick, ->, >=latex](raw_mat1.south) -- (process1.north);
+    \draw[thick, ->, >=latex](raw_mat2.south) -- (process2.north);
+    \draw[thick, ->, >=latex](raw_mat3.south) -- (process3.north);
+    \draw[thick, ->, >=latex](raw_mat4.south) -- (process4.north);
+    \draw[thick, ->, >=latex](raw_mat5.south) -- (process5.north);
+
+    \draw[thick](process1.south) -- (blank_assembly.center);
+    \draw[thick](process2.south) -- (blank2.center);
+    \draw[thick](process3.south) -- (blank3.center);
+    \draw[thick](process4.south) -- (blank4.center);
+    \draw[thick](process5.south) -- (blank5.center);
+    \draw[thick](blank_dots.center) -- (blank1.center);
+
+    \draw[thick, ->, >=latex](blank_assembly.center) -- (assembly_transport.west);
+
+    \draw[thick, ->, >=latex](assembly_transport.east) -- (product.west);
+    \draw[thick, ->, >=latex](product.south) -- (waste.north);
+    
+
+\end{tikzpicture}
+\caption{Caption.}\label{fig:inventory_pen_paper}
+\end{figure}
+
+
 \subsection{Model: Tablet and Stylus}\label{subsec:model_tablet_stylus}
+
+\begin{figure}[H]
+    \centering
+\begin{tikzpicture}[every text node part/.style={align=center}]
+    \node(raw_mat1)[unit]{\footnotesize{Raw Material 1}};
+    \node(raw_mat2)[unit, right of=raw_mat1, xshift=0.11\textwidth]{\footnotesize{Raw Material 2}};
+    \node(raw_mat3)[unit, right of=raw_mat2, xshift=0.11\textwidth]{\footnotesize{Raw Material 3}};
+    \node(raw_mat4)[unit, right of=raw_mat3, xshift=0.11\textwidth]{\footnotesize{Raw Material 4}};
+    \node(raw_mat5)[unit, right of=raw_mat4, xshift=0.11\textwidth]{\footnotesize{Raw Material 5}};
+    \node(dots1)[blank, right of=raw_mat5, xshift=0.05\textwidth]{\footnotesize{\dots}};
+    
+    \node(process1)[unit, below of=raw_mat1, yshift=-0.4cm]{\footnotesize{Process 1}};
+    \node(process2)[unit, below of=raw_mat2, yshift=-0.4cm]{\footnotesize{Process 2}};
+    \node(process3)[unit, below of=raw_mat3, yshift=-0.4cm]{\footnotesize{Process 3}};
+    \node(process4)[unit, below of=raw_mat4, yshift=-0.4cm]{\footnotesize{Process 4}};
+    \node(process5)[unit, below of=raw_mat5, yshift=-0.4cm]{\footnotesize{Process 5}};
+    \node(dots2)[blank, below of=dots1, yshift=-0.4cm]{\footnotesize{\dots}};
+
+    \node(blank1)[blank, below of=process1, yshift=-0.4cm]{};
+    \node(blank2)[blank, below of=process2, yshift=-0.4cm]{};
+    \node(blank3)[blank, below of=process3, yshift=-0.4cm]{};
+    \node(blank4)[blank, below of=process4, yshift=-0.4cm]{};
+    \node(blank5)[blank, below of=process5, yshift=-0.4cm]{};
+    \node(blank_dots)[blank, below of=dots2, yshift=-0.4cm]{};
+
+    \node(blank_assembly)[blank, below of=blank1, yshift=-0.4cm]{};
+    \node(assembly_transport)[unit, right of=blank_assembly, xshift=0.05\textwidth]{\small{Assembly}\\ \small{and}\\\small{Transportation}};
+    \node(product)[unit, right of=assembly_transport, xshift=0.2\textwidth]{\small{Product}};
+    \node(electricity)[unit, right of=product, xshift=0.2\textwidth]{\small{Electricity}};
+    \node(waste)[unit, below of=product, yshift=-1cm]{Waste};
+
+    \draw[thick, ->, >=latex](raw_mat1.south) -- (process1.north);
+    \draw[thick, ->, >=latex](raw_mat2.south) -- (process2.north);
+    \draw[thick, ->, >=latex](raw_mat3.south) -- (process3.north);
+    \draw[thick, ->, >=latex](raw_mat4.south) -- (process4.north);
+    \draw[thick, ->, >=latex](raw_mat5.south) -- (process5.north);
+
+    \draw[thick](process1.south) -- (blank_assembly.center);
+    \draw[thick](process2.south) -- (blank2.center);
+    \draw[thick](process3.south) -- (blank3.center);
+    \draw[thick](process4.south) -- (blank4.center);
+    \draw[thick](process5.south) -- (blank5.center);
+    \draw[thick](blank_dots.center) -- (blank1.center);
+
+    \draw[thick, ->, >=latex](blank_assembly.center) -- (assembly_transport.west);
+
+    \draw[thick, ->, >=latex](assembly_transport.east) -- (product.west);
+    \draw[thick, ->, >=latex](electricity.west) -- (product.east);
+    \draw[thick, ->, >=latex](product.south) -- (waste.north);
+    
+
+\end{tikzpicture}
+\caption{Caption.}\label{fig:inventory_ipad}
+\end{figure}

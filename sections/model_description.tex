@@ -35,18 +35,18 @@ Before discussing the effects for each scenario, an inventory for their unit pro
 \begin{figure}[H]
     \centering
 \begin{tikzpicture}[every text node part/.style={align=center}]
-    \node(raw_mat1)[unit]{\footnotesize{Raw Material 1}};
-    \node(raw_mat2)[unit, right of=raw_mat1, xshift=0.11\textwidth]{\footnotesize{Raw Material 2}};
-    \node(raw_mat3)[unit, right of=raw_mat2, xshift=0.11\textwidth]{\footnotesize{Raw Material 3}};
-    \node(raw_mat4)[unit, right of=raw_mat3, xshift=0.11\textwidth]{\footnotesize{Raw Material 4}};
-    \node(raw_mat5)[unit, right of=raw_mat4, xshift=0.11\textwidth]{\footnotesize{Raw Material 5}};
+    \node(raw_mat1)[unit]{\footnotesize{Bark, Fibers,}\\\footnotesize{Cotton, etc.}};
+    \node(raw_mat2)[unit, right of=raw_mat1, xshift=0.11\textwidth]{\footnotesize{Aluminum}};
+    \node(raw_mat3)[unit, right of=raw_mat2, xshift=0.11\textwidth]{\footnotesize{Polystyrene}};
+    \node(raw_mat4)[unit, right of=raw_mat3, xshift=0.11\textwidth]{\footnotesize{Polypropylene}};
+    \node(raw_mat5)[unit, right of=raw_mat4, xshift=0.11\textwidth]{\footnotesize{Ink, solvents}};
     \node(dots1)[blank, right of=raw_mat5, xshift=0.05\textwidth]{\footnotesize{\dots}};
     
-    \node(process1)[unit, below of=raw_mat1, yshift=-0.4cm]{\footnotesize{Process 1}};
-    \node(process2)[unit, below of=raw_mat2, yshift=-0.4cm]{\footnotesize{Process 2}};
-    \node(process3)[unit, below of=raw_mat3, yshift=-0.4cm]{\footnotesize{Process 3}};
-    \node(process4)[unit, below of=raw_mat4, yshift=-0.4cm]{\footnotesize{Process 4}};
-    \node(process5)[unit, below of=raw_mat5, yshift=-0.4cm]{\footnotesize{Process 5}};
+    \node(process1)[unit, below of=raw_mat1, yshift=-0.4cm]{\footnotesize{Pulping, pressing,}\\\footnotesize{calendering}};
+    \node(process2)[unit, below of=raw_mat2, yshift=-0.4cm]{\footnotesize{Wire drawing}};
+    \node(process3)[unit, below of=raw_mat3, yshift=-0.4cm]{\footnotesize{Injection}\\\footnotesize{moulding}};
+    \node(process4)[unit, below of=raw_mat4, yshift=-0.4cm]{\footnotesize{Injection}\\\footnotesize{moulding}};
+    \node(process5)[unit, below of=raw_mat5, yshift=-0.4cm]{\footnotesize{Chemical mixing}};
     \node(dots2)[blank, below of=dots1, yshift=-0.4cm]{\footnotesize{\dots}};
 
     \node(blank1)[blank, below of=process1, yshift=-0.4cm]{};
@@ -59,7 +59,7 @@ Before discussing the effects for each scenario, an inventory for their unit pro
     \node(blank_assembly)[blank, below of=blank1, yshift=-0.4cm]{};
     \node(assembly_transport)[unit, right of=blank_assembly, xshift=0.05\textwidth]{\small{Assembly}\\ \small{and}\\\small{Transportation}};
     \node(product)[unit, right of=assembly_transport, xshift=0.2\textwidth]{\small{5 Years University Studies:}\\\small{Oxford Notebooks}\\\small{BIC Ball-point pens}};
-    \node(waste)[unit, below of=product, yshift=-1cm]{Waste};
+    \node(waste)[unit, below of=product, yshift=-1cm]{\small{Recycling}\\\small{Disassembly}\\\small{Landfill}};
 
     \draw[thick, ->, >=latex](raw_mat1.south) -- (process1.north);
     \draw[thick, ->, >=latex](raw_mat2.south) -- (process2.north);
@@ -81,7 +81,7 @@ Before discussing the effects for each scenario, an inventory for their unit pro
     
 
 \end{tikzpicture}
-\caption{Caption.}\label{fig:inventory_pen_paper}
+\caption{Inventory for analog note-taking scenario.}\label{fig:inventory_pen_paper}
 \end{figure}
 
 

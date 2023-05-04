@@ -1,5 +1,5 @@
 \section{Model Description}\label{sec:model_description}
-The following section contains the description for all models required for the comparison done in this investigation. First, the functional unit used as a comparison point will be discussed in subsection~\ref{subsec:functional_unit}. After, thorough descriptions for the required models for both scenarios are discussed in subsections~\ref{subsec:inventory}.
+The following section contains the description for all models required for the comparison done in this investigation. First, the functional unit used as a comparison point will be discussed in subsection~\ref{subsec:functional_unit}. After, thorough descriptions for the required models for both scenarios are discussed in subsections~\ref{subsec:model_pen_paper} and~\ref{subsec:model_tablet_stylus}.
 
 
 \subsection{Functional Unit}\label{subsec:functional_unit}
@@ -27,10 +27,8 @@ As a first step, the topic of the functional unit must be discussed. This is a c
 \end{table}
 \renewcommand{\arraystretch}{1}
 
-\subsection{Scenario Inventory}\label{subsec:inventory}
-Before discussing the effects for each scenario, an inventory for their unit processes must be done. This inventory contains the raw materials involved in the manufacturing process for all components used in the scenario, all processes required for the assembly as well as the transportation involved in the delivery of all physical products. It is worth noting that the materials listed in the following are not an extensive list since the use of the \textsc{SimaPro} software accounts for many often overlooked materials.
+\subsection{Model: Pen and Paper}\label{subsec:model_pen_paper}
 
-\subsubsection{Model: Pen and Paper}\label{subsubsec:model_pen_paper}
 
 \begin{figure}[H]
     \centering
@@ -85,17 +83,20 @@ Before discussing the effects for each scenario, an inventory for their unit pro
 \end{figure}
 
 
-\subsubsection{Model: Tablet and Stylus}\label{subsubsec:model_tablet_stylus}
+\subsection{Model: Tablet and Stylus}\label{subsec:model_tablet_stylus}
 
 \begin{figure}[H]
     \centering
 \begin{tikzpicture}[every text node part/.style={align=center}]
-    \node(raw_mat1)[unit]{\footnotesize{Raw Material 1}};
-    \node(raw_mat2)[unit, right of=raw_mat1, xshift=0.11\textwidth]{\footnotesize{Raw Material 2}};
-    \node(raw_mat3)[unit, right of=raw_mat2, xshift=0.11\textwidth]{\footnotesize{Raw Material 3}};
-    \node(raw_mat4)[unit, right of=raw_mat3, xshift=0.11\textwidth]{\footnotesize{Raw Material 4}};
-    \node(raw_mat5)[unit, right of=raw_mat4, xshift=0.11\textwidth]{\footnotesize{Raw Material 5}};
-    \node(dots1)[blank, right of=raw_mat5, xshift=0.05\textwidth]{\footnotesize{\dots}};
+    \node(raw_mat1)[unit]{\footnotesize{Aluminum}};
+    \node(raw_mat2)[unit, right of=raw_mat1, xshift=0.11\textwidth]{\footnotesize{Copper}};
+    \node(raw_mat3)[unit, right of=raw_mat2, xshift=0.11\textwidth]{\footnotesize{Tin}};
+    \node(raw_mat4)[unit, right of=raw_mat3, xshift=0.11\textwidth]{\footnotesize{Plastic}};
+    \node(raw_mat5)[unit, right of=raw_mat4, xshift=0.11\textwidth]{\footnotesize{Gold}};
+    \node(dots1)[blank, right of=raw_mat5, xshift=0.05\textwidth]
+    {\footnotesize{Rare earth elements}};
+    \node(dots1)[blank, right of=raw_mat5, xshift=0.05\textwidth]
+    {\footnotesize{\dots}};
     
     \node(process1)[unit, below of=raw_mat1, yshift=-0.4cm]{\footnotesize{Process 1}};
     \node(process2)[unit, below of=raw_mat2, yshift=-0.4cm]{\footnotesize{Process 2}};

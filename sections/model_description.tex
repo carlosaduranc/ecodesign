@@ -91,18 +91,18 @@ Before discussing the effects for each scenario, an inventory for their unit pro
     \centering
 \begin{tikzpicture}[every text node part/.style={align=center}]
     \node(raw_mat1)[unit]{\footnotesize{Aluminum}};
-    \node(raw_mat2)[unit, right of=raw_mat1, xshift=0.11\textwidth]{\footnotesize{Copper}};
-    \node(raw_mat3)[unit, right of=raw_mat2, xshift=0.11\textwidth]{\footnotesize{Tin}};
-    \node(raw_mat4)[unit, right of=raw_mat3, xshift=0.11\textwidth]{\footnotesize{Plastic}};
-    \node(raw_mat5)[unit, right of=raw_mat4, xshift=0.11\textwidth]{\footnotesize{Gold}};
+    \node(raw_mat2)[unit, right of=raw_mat1, xshift=0.11\textwidth]{\footnotesize{Copper, Gold}};
+    \node(raw_mat3)[unit, right of=raw_mat2, xshift=0.11\textwidth]{\footnotesize{Polypropylene}};
+    \node(raw_mat4)[unit, right of=raw_mat3, xshift=0.11\textwidth]{\footnotesize{Polystyrene}};
+    \node(raw_mat5)[unit, right of=raw_mat4, xshift=0.11\textwidth]{\footnotesize{Tin}};
     \node(dots1)[blank, right of=raw_mat5, xshift=0.05\textwidth]
     {\footnotesize{\dots}};
     
     \node(process1)[unit, below of=raw_mat1, yshift=-0.4cm]{\footnotesize{Process 1}};
-    \node(process2)[unit, below of=raw_mat2, yshift=-0.4cm]{\footnotesize{Process 2}};
-    \node(process3)[unit, below of=raw_mat3, yshift=-0.4cm]{\footnotesize{Process 3}};
-    \node(process4)[unit, below of=raw_mat4, yshift=-0.4cm]{\footnotesize{Process 4}};
-    \node(process5)[unit, below of=raw_mat5, yshift=-0.4cm]{\footnotesize{Process 5}};
+    \node(process2)[unit, below of=raw_mat2, yshift=-0.4cm]{\footnotesize{Electroplating}};
+    \node(process3)[unit, below of=raw_mat3, yshift=-0.4cm]{\footnotesize{Injection}\\\footnotesize{moulding}};
+    \node(process4)[unit, below of=raw_mat4, yshift=-0.4cm]{\footnotesize{Injection}\\\footnotesize{moulding}};
+    \node(process5)[unit, below of=raw_mat5, yshift=-0.4cm]{\footnotesize{Hot air leveling}};
     \node(dots2)[blank, below of=dots1, yshift=-0.4cm]{\footnotesize{\dots}};
 
     \node(blank1)[blank, below of=process1, yshift=-0.4cm]{};

@@ -3,27 +3,51 @@ Following the definition for both scenarios to be compared, their life cycles mu
 
 
 \subsection{Analog}\label{subsec:analog_scenario}
+For the analog case, traditionally used brands for all materials were considered. This choice required some assumptions to be taken in order to ensure sufficient and realistic amounts for the materials used over a 5 year student career. For this, a small survey of 10 master in mechanical engineering students was conducted. Students were asked how many courses they take on average per academic year as well as how many notebooks and pens they require per lecture. This amounted, on average, to 8 lectures per year using 1 notebook per lecture. Additionally, the students agreed upon using three multi-colored pens per semester (6 per academic year). These results amounted to a total of 40 notebooks and 30 pens used over a span of 5 academic years.
+
+Moreover, traditionally bought and widely available brands were chosen for the notebooks and pens. This led to the choice of BIC ball-point pens and spiraled, 100 page A4 Oxford notebooks.
 
 \subsubsection*{Assembly}
+Once the material selection was carried out, the assemblies for the notebooks and pens could be created. For this, the EcoInvent database was used within the \textsc{SimaPro} software to take advantage of the highly detailed accounts available for the impacts of a wide range of materials and assemblies. The following describes all components involved in each of the assemblies.
+
 \begin{enumerate}
     \item \textbf{Oxford Notebook (x40)}
     \begin{enumerate}
-        \item Wire spiral:
-        \item Covers (x2/ea):
-        \item Paper (x100/ea):
+        \item Wire spiral: For the wire spiral holding the pages and covers together, a low-alloyed steel wire was chosen. This model accounts for the manufacturing of the spirals as well as the sourcing for the steel required to produce all 40 spirals.
+        \item Covers (x2/ea): For the covers, white-lined chipboards (WLC) were chosen. Additionally, their calendering, giving them the typical shiny look, was accounted for.
+        \item Paper (x100/ea): For the notebook pages, 100 gram per square meter (GSM) A4 paper was taken. This is considered standard in many European paper companies and is widely found in many notebook models. Within the \textsc{SimaPro} software, this was modelled using a wood-containing light weight coated (LWC) paper for which all dimensions and densities were accounted for.
     \end{enumerate}
     \item \textbf{BIC Ball-point Pen (x30)}
     \begin{enumerate}
-        \item Pen casing:
-        \item Pen ink tube:
-        \item Pen tip:
+        \item Pen casing: The outer casing for the pen (including the cap) was modelled using polypropylene granulate. Furthermore, this was subjected to a process of injection moulding to account for the energy required for the shaping of the component.
+        \item Pen ink tube: Similar to the pen outer casing, the internal ink tube for the ball-point pen was set to be manufacture using injection moulding. However, this was modelled by using general purpose polystyrene instead of polypropylene granulate.
+        \item Pen ink: This sub-assembly presented some difficulties since there were no pre-defined modules within the EcoInvent database for the specific type of ink used in ball-point pens. However, a model existed for printer toner which resembles the chemical constitution of pen ink. This required the addition solvent (benzyl alcohol) in order to account for the difference in solubility as well as density between the two types of ink. This mixture was done using a 1:1 ratio between the toner and solvent.
+        \item Pen tip: The pen tip sub-assembly required two main components. First the ball-point was taken to be made out of pressed and honed brass. Lacking specific modelling for these manufacturing processes, a general metal product manufacturing model was taken. Moreover, the casing for the ball point was again taken to be made from injection moulded polystyrene.
     \end{enumerate}
 \end{enumerate}
 
+\subsubsection*{Transportation}
+With the goal of accounting for the transportation required for the material to arrive at Belgium, an extensive research on manufacturing plants for both companies (Oxford and BIC) was conducted.
+
+Oxford Notebooks is a daughter company to Hamelin, a French-based company. However, the closest manufacturing plant to Belgium, which is its national provider, is located in the Netherlands outside of Venlo. Therefore, to account for the transportation, a small lorry ($> 16$ ft) was considered. The impact of this transportation is measured by its total tkm (ton kilometer) which amounted to 4.7815 tkm for the transport of all 40 notebooks (27.48 kg) over the driving distance between the manufacturing plant in Venlo and Brussels (174 km).
+
+In the case for the BIC ball-point pens, it was found that the provider for Belgium was a manufacturing plant in Montevrain, France. Similar to the notebook case, a small lorry was considered with a total of 0.0474 tkm for all 30 pens over the 482 km between the manufacturing plant and Brussels.
+
 \subsubsection*{Use Case}
+Considering that this scenario only involved analog components, the use case of it required to additional contributions to its environmental impact. This presented a clear advantage to the digital scenario, which will be discussed in detail in the following section.
 
 \subsubsection*{Waste Scenario}
+For the end of life treatment of all components used over the 5 years of study, a disposal scenario was developed. The developed disposal scenario was based on detailed accounts from both Oxford and BIC for their corresponding disposal programs. However, since these programs require of a proper disposal by the end users, it was decided that only 15\% of the used materials would find their way to them while the remaining 85\% would end up in landfills.
 
+The finalized disposal program consists of the following:
+\begin{itemize}
+    \item 80\% of the polystyrene from the pens is able to be recycled for further use within BIC manufacturing processes.
+    \item Similarly, 80\% of the propylene is recycled.
+    \item 100\% of the brass recovered from the ball-point is recycled.
+    \item 100\% of the returned steel from the notebook spirals is made into scrap for further reuse.
+    \item 100\% of the papers as well as the covers is able to be turned into recycled paper for further use within Oxford notebooks.
+    \item All remaining materials such as leftover ink in the pen cartridges are disposed of into inert material landfills.
+\end{itemize}
 
 \subsection{Digital}\label{subsec:digital_scenario}
 

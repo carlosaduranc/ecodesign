@@ -27,10 +27,10 @@ As a first step, the topic of the functional unit must be discussed. This is a c
 \end{table}
 \renewcommand{\arraystretch}{1}
 
-\subsection{Scenario Inventory}\label{subsec:inventory}
+\subsection{Test Case Inventory}\label{subsec:inventory}
 Before discussing the effects for each scenario, an inventory for their unit processes must be done. This inventory contains the raw materials involved in the manufacturing process for all components used in the scenario, all processes required for the assembly as well as the transportation involved in the delivery of all physical products. It is worth noting that the materials listed in the following are not an extensive list since the use of the \textsc{SimaPro} software accounts for many often overlooked materials.
 
-\subsubsection{Model: Pen and Paper}\label{subsubsec:model_pen_paper}
+Figures~\ref{fig:inventory_pen_paper} and~\ref{fig:inventory_ipad} depict a rough representation of the inventory carried out within the \textsc{SimaPro} software for all materials and processes involved in the analog and digital note-taking scenarios, respectively. From these figures, it becomes evident that a large array of raw materials as well as energy intensive processes are required for the manufacturing (and use in the case of the digital scenario) for both scenarios. 
 
 \begin{figure}[H]
     \centering
@@ -84,9 +84,6 @@ Before discussing the effects for each scenario, an inventory for their unit pro
 \caption{Inventory for analog note-taking scenario.}\label{fig:inventory_pen_paper}
 \end{figure}
 
-
-\subsubsection{Model: Tablet and Stylus}\label{subsubsec:model_tablet_stylus}
-
 \begin{figure}[H]
     \centering
 \begin{tikzpicture}[every text node part/.style={align=center}]
@@ -116,7 +113,7 @@ Before discussing the effects for each scenario, an inventory for their unit pro
     \node(assembly_transport)[unit, right of=blank_assembly, xshift=0.05\textwidth]{\small{Assembly}\\ \small{and}\\\small{Transportation}};
     \node(product)[unit, right of=assembly_transport, xshift=0.2\textwidth]{\small{5 Years University Studies:}\\\small{Apple iPad 10th Gen}\\\small{Apple Pencil 1st Gen}};
     \node(electricity)[unit, right of=product, xshift=0.2\textwidth]{\small{Electricity}};
-    \node(waste)[unit, below of=product, yshift=-1cm]{Waste};
+    \node(waste)[unit, below of=product, yshift=-1cm]{\small{Recycling}\\\small{Disassembly}\\\small{Landfill}};
 
     \draw[thick, ->, >=latex](raw_mat1.south) -- (process1.north);
     \draw[thick, ->, >=latex](raw_mat2.south) -- (process2.north);
@@ -139,5 +136,59 @@ Before discussing the effects for each scenario, an inventory for their unit pro
     
 
 \end{tikzpicture}
-\caption{Caption.}\label{fig:inventory_ipad}
+\caption{Inventory for analog note-taking scenario..}\label{fig:inventory_ipad}
 \end{figure}
+
+Moreover, a distinction must be made between the in and outflows for each element in the inventory alongside their sources or recipients. These could come from or go to the ecosphere or the technosphere, where the ecosphere represents the natural environment and the technosphere represents industrial processes. The use of the EcoInvent database alleviates this task from the students which could become very time-intensive. This is because not many processes are straightforward and usually involve multiple inputs and outputs from all sources. Additionally, in many cases multifunctionality within the process raises many issues involving the balance for the responsibility given to the elements involved in the process. This practice involves multiple assumptions and raises many issues for the credibility of the assessment. Fortunately, EcoInvent has these assumptions embedded into its database. Simplified examples for an eco- and technosphere analysis for a single process for both note-taking strategies are given in Figures~\ref{fig:eco_technosphere_analog} and~\ref{fig:eco_technosphere_digital}.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[every text node part/.style={align=center}]
+        \draw[fill=green!15, draw=black] (0, 0) rectangle (0.8\textwidth, 0.5\textwidth);
+        \draw[fill=cyan!15, draw=black] (0.05\textwidth, 0.1\textwidth) rectangle (0.75\textwidth, 0.41\textwidth);
+
+        \node(Ecosphere) at (0, 0.5\textwidth)[anchor=north west]{\textbf{ECOSPHERE}};
+        \node(Technosphere) at (0.05\textwidth, 0.41\textwidth)[anchor=north west]{\textbf{TECHNOSPHERE}};
+
+        \draw[fill=red!40, draw=black] (0.3\textwidth,0.15\textwidth) rectangle (0.5\textwidth,0.25\textwidth);
+        \node(process) at (0.4\textwidth, 0.2\textwidth)[anchor=center]{Pulping, pressing, \\calendering};
+
+        \draw[->, >=latex](0.4\textwidth, 0.42\textwidth) -- node[anchor=south, yshift=0.08\textwidth]{Bark, cotton}(0.4\textwidth, 0.25\textwidth);
+        \draw[->, >=latex](0.2\textwidth, 0.2\textwidth) -- node[anchor=east, xshift=-0.05\textwidth]{Fibers}(0.3\textwidth, 0.2\textwidth);
+        \draw[->, >=latex](0.5\textwidth, 0.2\textwidth) -- node[anchor=west, xshift=0.05\textwidth]{A4 Paper}(0.6\textwidth, 0.2\textwidth);
+        \draw[->, >=latex](0.48\textwidth, 0.15\textwidth) -- node[anchor=north, yshift=-0.05\textwidth]{Waste}(0.48\textwidth, 0.08\textwidth);
+        \draw[->, >=latex](0.32\textwidth, 0.15\textwidth) -- node[anchor=north, yshift=-0.05\textwidth]{Emissions}(0.32\textwidth, 0.08\textwidth);
+        \draw[->, >=latex](0.32\textwidth, 0.3\textwidth) -- node[anchor=south, yshift=0.03\textwidth]{Energy\\carriers}(0.32\textwidth, 0.25\textwidth);
+        \draw[->, >=latex](0.48\textwidth, 0.3\textwidth) -- node[anchor=south, yshift=0.03\textwidth]{Process\\materials}(0.48\textwidth, 0.25\textwidth);
+        
+    \end{tikzpicture}
+    \caption{Example for an eco- and technosphere analysis for an individual process for the analog note-taking scenario.}\label{fig:eco_technosphere_analog}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[every text node part/.style={align=center}]
+        \draw[fill=green!15, draw=black] (0, 0) rectangle (0.8\textwidth, 0.5\textwidth);
+        \draw[fill=cyan!15, draw=black] (0.05\textwidth, 0.1\textwidth) rectangle (0.75\textwidth, 0.41\textwidth);
+
+        \node(Ecosphere) at (0, 0.5\textwidth)[anchor=north west]{\textbf{ECOSPHERE}};
+        \node(Technosphere) at (0.05\textwidth, 0.41\textwidth)[anchor=north west]{\textbf{TECHNOSPHERE}};
+
+        \draw[fill=red!40, draw=black] (0.3\textwidth,0.15\textwidth) rectangle (0.5\textwidth,0.25\textwidth);
+        \node(process) at (0.4\textwidth, 0.2\textwidth)[anchor=center]{Welding};
+
+        \draw[->, >=latex](0.4\textwidth, 0.42\textwidth) -- node[anchor=south, yshift=0.08\textwidth]{copper, gold}(0.4\textwidth, 0.25\textwidth);
+        \draw[->, >=latex](0.2\textwidth, 0.2\textwidth) -- node[anchor=east, xshift=-0.05\textwidth]{Silicon\\plate}(0.3\textwidth, 0.2\textwidth);
+        \draw[->, >=latex](0.5\textwidth, 0.2\textwidth) -- node[anchor=west, xshift=0.05\textwidth]{PWB}(0.6\textwidth, 0.2\textwidth);
+        \draw[->, >=latex](0.48\textwidth, 0.15\textwidth) -- node[anchor=north, yshift=-0.05\textwidth]{Waste}(0.48\textwidth, 0.08\textwidth);
+        \draw[->, >=latex](0.32\textwidth, 0.15\textwidth) -- node[anchor=north, yshift=-0.05\textwidth]{Emissions}(0.32\textwidth, 0.08\textwidth);
+        \draw[->, >=latex](0.32\textwidth, 0.3\textwidth) -- node[anchor=south, yshift=0.03\textwidth]{Energy\\carriers}(0.32\textwidth, 0.25\textwidth);
+        \draw[->, >=latex](0.48\textwidth, 0.3\textwidth) -- node[anchor=south, yshift=0.03\textwidth]{Process\\materials}(0.48\textwidth, 0.25\textwidth);
+        
+    \end{tikzpicture}
+    \caption{Example for an eco- and technosphere analysis for an individual process for the digital note-taking scenario.}\label{fig:eco_technosphere_digital}
+\end{figure}
+
+Following this distinction, all pieces of data must be classified as being foreground or background data. For this investigation, this step is facilitated by the use of the EcoInvent database within the \textsc{SimaPro} software. Most of the processes described for each investigation will be taken as background data since their information is widely available in the EcoInvent database and only the top-level assemblies must be explicitly defined. A through description for these (sub)~assemblies is given in the following section for both note-taking scenarios.
+
+Finally, the system boundaries must be clearly stated. This is a crucial step since it can determine the outcome of an investigation, specifically when comparing multiple test cases. For this investigation, only the materials, processes, transportation and energy required for the manufacturing and use of both test cases is considered over a period of five academic years. Impacts caused by the manufacturing of the machines involved in the industrial and transportation processes of the material for the investigated test cases are not included.
